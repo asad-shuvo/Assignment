@@ -29,15 +29,15 @@
                     if (hours < 12) hours += 12;
                 }
                 hours = (hours < 10) ? '0' + hours : hours;
-                result  = hours + ':' + min + ':' + second;
+                result = hours + ':' + min + ':' + second;
             }
             else {
                 if (hours < 12) {
-                    result  = hours + ':' + min + ':' + second + ' AM';
+                    result = hours + ':' + min + ':' + second + ' AM';
                 } else {
                     hours = hours - 12;
                     hours = (hours < 10) ? '0' + hours : hours;
-                    result  = hours + ':' + min + ':' + second + ' PM';
+                    result = hours + ':' + min + ':' + second + ' PM';
                 }
             }
             return result;

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let oneSeries = [
+            'zero',
+            'one',
+            'two',
+            'three',
+            'four',
+            'five',
+            'six',
+            'seven',
+            'eight',
+            'nine',
+            'ten'];
+        let tenSeries = [
+            'ten',
+            'eleven',
+            'twelve',
+            'thirteen',
+            'fourteen',
+            'fifteen',
+            'sixteen',
+            'seventeen',
+            'eigteen',
+            'nineteen',
+            'twenty'
+        ];
+        let other = [
+            'ig',
+            'ig',
+            'tweenty',
+            'thirty',
+            'forty',
+            'fifty',
+            'sixty',
+            'seventy',
+            'eighty',
+            'ninety'
+        ];
+
+        let calu = function (tmp) {
+            let result = "";
+            if (tmp >= 100 && tmp <= 999) {
+                let tmp1 = tmp / 100;
+                tmp1 = parseInt(tmp1);
+                result += oneSeries[tmp1] ;
+                result+= tmp1===1?' hundred ':' Hundreds ';
+                tmp %= 100;
+            }
+            if (tmp >= 10 && tmp <= 99) {
+                let tmp1 = tmp / 10;
+                tmp1 = parseInt(tmp1);
+                if (tmp1 === 1) {
+                    let tmp2 = tmp % 10;
+                    result += tenSeries[tmp2];
+                    tmp = 0;
+                }
+                else {
+                    result += other[tmp1];
+                    if (tmp % 10 === 0) {
+                        tmp = 0;
+                    }
+                    else {
+                        result += " " + oneSeries[tmp % 10];
+                        tmp = 0;
+                    }
+                }
+            }
+            if (tmp >= 1 && tmp <= 9) {
+                result += oneSeries[tmp];
+                tmp = 0;
+            }
+            return result;
+        }
+        let stringConvert = function (num) {
+            let result = "";
+            if (num > 999999999) {
+                let tmp = num / 1000000000;
+                tmp = parseInt(tmp);
+                let ret = calu(tmp);
+
+                result += ret ;
+                result += tmp===1?" billion ":" billions ";
+                num %= 1000000000;
+            }
+            if (num > 999999) {
+                let tmp = num / 1000000;
+                tmp = parseInt(tmp);
+                let ret = calu(tmp);
+                result += ret;
+                result += tmp===1?" million ":" millions ";
+                num %= 1000000;
+            }
+            if (num > 999) {
+                let tmp = num / 1000;
+                tmp = parseInt(tmp);
+                let ret = calu(tmp);
+                result += ret;
+                result += tmp===1?" thousand ":" thousands ";
+                num %= 1000;
+            }
+            if (num > 99) {
+                let tmp = num / 100;
+                tmp = parseInt(tmp);
+                let ret = calu(tmp);
+                result += ret;
+                result += tmp===1?" hundred ":" hundreds ";
+                num %= 100;
+            }
+            if (num > 9) {
+                //  let tmp=num/10;
+                tmp = parseInt(num);
+                let ret = calu(tmp);
+                result += ret + " ";
+                num %= 10;
+                num=-1;
+            }
+            if (num < 9 && num>=0) {
+                result += oneSeries[num];
+            }
+           result=result[0].toUpperCase()+result.slice(1);
+            return result;
+        }
+        
+        console.log(stringConvert(111121199221));
+        console.log(stringConvert(243));
+        console.log(stringConvert(124));
+        console.log(stringConvert(1));
+        console.log(stringConvert(0));
+        console.log(stringConvert(12));
+        console.log(stringConvert(122));
+        console.log(stringConvert(999));
+        console.log(stringConvert(12445));
+        console.log(stringConvert(129945));
+
+
+
+
+
+    </script>
+</body>
+
+</html>
