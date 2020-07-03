@@ -82,6 +82,7 @@
             return result;
         }
         let stringConvert = function (num) {
+            let store=num;
             let result = "";
             if (num > 999999999) {
                 let tmp = num / 1000000000;
@@ -128,7 +129,7 @@
                 result += oneSeries[num];
             }
            result=result[0].toUpperCase()+result.slice(1);
-            return result;
+            return `${store}----> ${result}`;
         }
         
         console.log(stringConvert(111121199221));
