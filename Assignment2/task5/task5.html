@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let diamondShape = function (n) {
+            console.log("Diamond Shape for : "+ n);
+            
+            for (let i = 1; i <= 2 * n - 1; i++) {
+                let space;
+                let star;
+                space = (i <= n) ? n - i : i - n;
+                star = (i <= n) ? i * 2 - 1 : ((n - space) * 2) - 1;
+                let result = "";
+                for (let sp = 1; sp <= space; sp++) {
+                    result += " ";
+                }
+                for (let str = 1; str <= star; str++) {
+                    result += "*";
+                }
+                console.log(result);
+            }
+        }
+        diamondShape(3);
+        diamondShape(4);
+        diamondShape(5);
+        diamondShape(6);
+
+    </script>
+</body>
+
+</html>
