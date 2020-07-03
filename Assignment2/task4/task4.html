@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = new Array(4);
+        console.log(arr);
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = new Array(4);
+        }
+        let cnt = 1;
+        for (var i = 0; i < 4; i++) {
+            for (var j = 0; j < 4; j++) {
+                arr[i][j] = cnt++;
+            }
+        }
+            for (var i = 0; i < 4; i++) {
+                for (var j = 0; j < 4; j++) {
+                    console.log(`${i}${j}--> ${arr[i][j]}`);
+                }
+            } 
+    </script>
+</body>
+
+</html>
