@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    let sib=[];
+$(document).ready(function(){
+var len = $( "li.start" ).siblings()
+  .css( "color", "red" );
+sib.push(len);
+});
+// console.log(sib);
+for(let i in sib){
+    console.log(i);
+}
+</script>
+</head>
+<body>
+
+<div style="width:500px;" class="siblings">
+  <ul> 
+    <li>li 1</li>
+    <li>li 2</li>
+    <li class="start">li (sibling)</li>
+    <li>li sib 1</li>
+    <li>li sib 2</li>
+  </ul>   
+</div>
+
+</body>
+</html>

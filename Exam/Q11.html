@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fun(this)">Button 1</button>
+    <button onclick="fun(this)">Button 2</button>
+    <script>
+        function fun(id){
+            let status=id.disabled;
+            // console.log(status);
+            if(id.disabled===true){
+                id.disabled=false;
+            }
+            else{
+                id.disabled=true;
+            }
+        }
+    </script>
+</body>
+</html>
