@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+function appendVal() {
+    var t0="<br>";
+  var t1 = "<label>Username </label>";   
+  var t2 = "<input type='text'>";  
+  var t3="<br>";
+  var t4 = "<label>Password </label>";   
+  var t5 = "<input type='password'>";   
+  var t9="<br>";
+  var t6   ="<button>Submit</button>" 
+       
+  $("body").append(t0,t1, t2, t3,t4,t5,t9,t6);   
+}
+</script>
+</head>
+<body>
+    <button onclick="appendVal()">Append</button>
+</body>
+</html>
