@@ -7,8 +7,12 @@
 </head>
 <body>
     <script>
-        var text = "this is, a new text";
-        var changedText = text.removeSpace();
+        var text = "this is a new text";
+        var changedText = removeSpace(text);
+        console.log(changedText);
+        function removeSpace(str){
+           return str.replace(" ","_");
+        }
         // function 
     </script>
 </body>
